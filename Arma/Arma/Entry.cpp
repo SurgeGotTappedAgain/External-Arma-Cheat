@@ -3,9 +3,9 @@
 #include "Globals.hpp"
 #include "SDK.hpp"
 HWND hwnd = nullptr;
-HANDLE memoryRead = 0, memoryWrite = 0, memoryESPWrite = 0;
 globals Globals;
 
+// This Only Loops Nearby Entities, You Can Add Far Entities Yourself
 void NearTableList()
 {
 	while (true)
@@ -41,6 +41,7 @@ void NearTableList()
 
 int main()
 {
+	// add your own driver with read/write
 	if (driver::openMemoryHandle())
 	{
 		std::cout << "[Communication Established]" << std::endl;
@@ -65,7 +66,7 @@ int main()
 
 	while (true)
 	{
-		main_loop();
+	     main_loop();
 	}
 
 	std::getchar();
